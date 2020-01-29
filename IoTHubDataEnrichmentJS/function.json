@@ -1,0 +1,42 @@
+{
+    "bindings": [
+      {
+        "type": "eventHubTrigger",
+        "name": "IoTHubMessages",
+        "direction": "in",
+        "eventHubName": "samples-workitems",
+        "connection": "maxdet2IoTHub_events_IOTHUB",
+        "cardinality": "many",
+        "consumerGroup": "$Default"
+      },
+      {
+        "type": "blob",
+        "name": "refData",
+        "path": "refdata/bacmap.json",
+        "connection": "AzureWebJobsStorage",
+        "direction": "in"
+      },
+      {
+        "type": "blob",
+        "name": "enrichedData",
+        "path": "enrichedfunc/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:hh}/{rand-guid}.json",
+        "connection": "AzureWebJobsStorage",
+        "direction": "out"
+      },
+      {
+        "type": "blob",
+        "name": "inblob",
+        "path": "enrichedfunc/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:hh}.json",
+        "connection": "AzureWebJobsStorage",
+        "direction": "in"
+      },
+      {
+        "type": "blob",
+        "name": "outblob",
+        "path": "enrichedfunc/{datetime:yyyy}/{datetime:MM}/{datetime:dd}/{datetime:hh}.json",
+        "connection": "AzureWebJobsStorage",
+        "direction": "out"
+      }
+    ],
+    "disabled": false
+  }
