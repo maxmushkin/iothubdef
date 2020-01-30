@@ -5,7 +5,7 @@
         "name": "IoTHubMessages",
         "direction": "in",
         "eventHubName": "samples-workitems",
-        "connection": "maxdet2IoTHub_cs",
+        "connection": "IoTHub_cs",
         "cardinality": "many",
         "consumerGroup": "$Default"
       },
